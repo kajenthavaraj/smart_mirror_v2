@@ -1,1 +1,1 @@
-# smart_mirror_v2
+# Smart Mirror
