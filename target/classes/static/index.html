@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Mirror</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: "Arial", sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 80px;
+        }
+        h2 {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="time">--:--:--</h1>
+    <h2 id="weather">Loading weather...</h2>
+
+    <script>
+        async function updateMirror() {
+            const timeResponse = await fetch('/api/time');
+            const timeText = await timeResponse.text();
+            document.getElementById('time').innerText = timeText;
+
+            const weatherResponse = await fetch('/api/weather');
+            const weatherText = await weatherResponse.text();
+            document.getElementById('weather').innerText = weatherText;
+        }
+
+        setInterval(updateMirror, 1000); // Update every second
+        updateMirror(); // Run immediately on load
+    </script>
+</body>
+</html>
