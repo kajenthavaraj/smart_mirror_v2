@@ -65,7 +65,7 @@ smart_mirror_v2/
 - **UI:** Edit `src/main/resources/static/index.html` and `styles.css` for custom layouts and styles.
 
 ## Troubleshooting
-- If weather info shows as `--°C` and `Error`, check your API key and ensure it is active and correct.
+- If weather info shows as `--°C` and `Error`, check your API key and ensure it is active and correct. New API keys might take up to 2 hours to work.
 - Check backend logs for error messages.
 - Ensure you have internet access for API calls.
 
