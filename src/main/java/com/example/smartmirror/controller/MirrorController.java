@@ -1,5 +1,8 @@
 package com.example.smartmirror.controller;
 
+import com.example.smartmirror.model.WeatherData;
+import com.example.smartmirror.service.WeatherService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +13,9 @@ import java.util.Locale;
 
 @RestController
 public class MirrorController {
+
+    @Autowired
+    private WeatherService weatherService;
 
     @GetMapping("/api/time")
     public String getTime() {
@@ -36,6 +42,15 @@ public class MirrorController {
 
     @GetMapping("/api/weather")
     public String[] getWeather() {
-        return new String[]{"25°C", "Sunny"};
+        try {
+            WeatherData weather = weatherService.getWeather("Toronto"); // Change to your city
+            return new String[]{
+                String.format("%.0f°C", weather.getMain().getTemp()),
+                weather.getWeather()[0].getMain()
+            };
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new String[]{"--°C", "Error"};
+        }
     }
 }

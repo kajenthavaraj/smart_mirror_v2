@@ -1,2 +1,6 @@
+com/example/smartmirror/model/WeatherData.class
 com/example/smartmirror/SmartMirrorApplication.class
+com/example/smartmirror/service/WeatherService.class
+com/example/smartmirror/model/WeatherData$Weather.class
+com/example/smartmirror/model/WeatherData$Main.class
 com/example/smartmirror/controller/MirrorController.class
