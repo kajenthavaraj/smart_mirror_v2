@@ -25,8 +25,14 @@ h2 {
     margin-top: -40px;
 }
 
-#weather {
+#weather_degree {
     font-size: 50px;
+    text-align: right;
+    margin-right: 100px;
+}
+
+#weather_description {
+    font-size: 20px;
     text-align: right;
     margin-right: 100px;
 }
