@@ -39,9 +39,6 @@ mvn spring-boot:run
 
 The application will start on [http://localhost:8080/](http://localhost:8080/).
 
-### 4. View the UI
-Open your browser and go to [http://localhost:8080/](http://localhost:8080/).
-
 ## Project Structure
 ```
 smart_mirror_v2/
