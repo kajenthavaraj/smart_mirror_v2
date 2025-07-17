@@ -21,7 +21,7 @@ public class MirrorController {
         // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, d'th' MMMM yyyy");
         // return LocalDateTime.now().format(formatter);
 
-        return "Monday, 17th July 2025";
+        return "Monday, July 17th 2025";
     }
 
     @GetMapping("/api/weather")
