@@ -12,27 +12,45 @@ h2 {
     font-size: 50px;
 }
 
-#time {
-    font-size: 80px;
+.top-container {
+    display: flex;
+    justify-content: space-between; /* Push left/right content apart */
+    padding: 0 100px;               /* 100px padding on left & right */
+    width: 100%;
+    box-sizing: border-box;         /* So padding doesn't break width */
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.left {
     text-align: left;
-    margin-left: 100px;
+}
+
+.right {
+    text-align: right;
+}
+
+
+#time {
+    font-size: 70px;
+    margin: 0;
 }
 
 #date {
     font-size: 30px;
-    text-align: left;
-    margin-left: 100px;
-    margin-top: -40px;
+    margin: 10px 0 0 0;
 }
 
 #weather_degree {
-    font-size: 50px;
-    text-align: right;
-    margin-right: 100px;
+    font-size: 70px;
+    margin: 0;
 }
 
 #weather_description {
-    font-size: 20px;
-    text-align: right;
-    margin-right: 100px;
+    font-size: 30px;
+    margin: 10px 0 0 0;
 }
