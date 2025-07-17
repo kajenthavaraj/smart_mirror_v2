@@ -38,19 +38,23 @@ h2 {
 #time {
     font-size: 70px;
     margin: 0;
+    font-weight: normal;
 }
 
 #date {
     font-size: 30px;
     margin: 10px 0 0 0;
+    font-weight: 300;
 }
 
 #weather_degree {
     font-size: 70px;
     margin: 0;
+    font-weight: normal;
 }
 
 #weather_description {
     font-size: 30px;
     margin: 10px 0 0 0;
+    font-weight: 300;
 }
