@@ -11,7 +11,7 @@ public class MirrorController {
 
     @GetMapping("/api/time")
     public String getTime() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
         return LocalDateTime.now().format(formatter);
     }
 
