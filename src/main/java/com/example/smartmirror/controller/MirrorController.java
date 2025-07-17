@@ -15,16 +15,17 @@ public class MirrorController {
         return LocalDateTime.now().format(formatter);
     }
 
-    @GetMapping("/api/weather")
-    public String getWeather() {
-        return "Sunny, 25°C"; // Hardcoded weather
-    }
-
     @GetMapping("/api/date")
     public String getDate() {
-        // // Return the date in the format of "Monday, 17th July 2025"    
+        // Return the date in the format of "Monday, 17th July 2025"    
         // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, d'th' MMMM yyyy");
         // return LocalDateTime.now().format(formatter);
+
         return "Monday, 17th July 2025";
+    }
+
+    @GetMapping("/api/weather")
+    public String[] getWeather() {
+        return new String[]{"25°C", "Sunny"};
     }
 }

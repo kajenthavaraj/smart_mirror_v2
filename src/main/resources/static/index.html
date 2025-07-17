@@ -22,8 +22,9 @@
             document.getElementById('date').innerText = dateText;
 
             const weatherResponse = await fetch('/api/weather');
-            const weatherText = await weatherResponse.text();
-            document.getElementById('weather').innerText = weatherText;
+            const weatherInfo = await weatherResponse.json();
+            document.getElementById('weather_degree').innerText = weatherInfo[0];
+            document.getElementById('weather_description').innerText = weatherInfo[1];
         }
 
         setInterval(updateMirror, 1000); // Update every second

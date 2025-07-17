@@ -8,7 +8,8 @@
 <body>
     <h1 id="time">--:--:--</h1>
     <h1 id="date">--:--:--</h1>
-    <h2 id="weather">Loading weather...</h2>
+    <h2 id="weather_degree">...</h2>
+    <h2 id="weather_description">...</h2>
 
     <script>
         async function updateMirror() {
@@ -21,8 +22,9 @@
             document.getElementById('date').innerText = dateText;
 
             const weatherResponse = await fetch('/api/weather');
-            const weatherText = await weatherResponse.text();
-            document.getElementById('weather').innerText = weatherText;
+            const weatherInfo = await weatherResponse.json();
+            document.getElementById('weather_degree').innerText = weatherInfo[0];
+            document.getElementById('weather_description').innerText = weatherInfo[1];
         }
 
         setInterval(updateMirror, 1000); // Update every second
