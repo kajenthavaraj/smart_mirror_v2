@@ -3,24 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Smart Mirror</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: "Arial", sans-serif;
-            text-align: center;
-            margin-top: 100px;
-        }
-        h1 {
-            font-size: 80px;
-        }
-        h2 {
-            font-size: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1 id="time">--:--:--</h1>
+    <h1 id="date">--:--:--</h1>
     <h2 id="weather">Loading weather...</h2>
 
     <script>
@@ -28,6 +15,10 @@
             const timeResponse = await fetch('/api/time');
             const timeText = await timeResponse.text();
             document.getElementById('time').innerText = timeText;
+
+            const dateResponse = await fetch('/api/date');
+            const dateText = await dateResponse.text();
+            document.getElementById('date').innerText = dateText;
 
             const weatherResponse = await fetch('/api/weather');
             const weatherText = await weatherResponse.text();
