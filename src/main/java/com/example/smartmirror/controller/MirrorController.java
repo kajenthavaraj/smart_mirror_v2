@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
+import java.util.Locale;
 
 @RestController
 public class MirrorController {
@@ -17,11 +19,19 @@ public class MirrorController {
 
     @GetMapping("/api/date")
     public String getDate() {
-        // Return the date in the format of "Monday, 17th July 2025"    
-        // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, d'th' MMMM yyyy");
-        // return LocalDateTime.now().format(formatter);
+        LocalDateTime now = LocalDateTime.now();
+        String dayOfWeek = now.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+        String month = now.getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+        int day = now.getDayOfMonth();
+        int year = now.getYear();
 
-        return "Monday, July 17th 2025";
+        // Determine ordinal suffix
+        String suffix = "th";
+        if (day % 10 == 1 && day != 11) suffix = "st";
+        else if (day % 10 == 2 && day != 12) suffix = "nd";
+        else if (day % 10 == 3 && day != 13) suffix = "rd";
+
+        return String.format("%s, %s %d%s %d", dayOfWeek, month, day, suffix, year);
     }
 
     @GetMapping("/api/weather")
