@@ -43,7 +43,7 @@ public class MirrorController {
     @GetMapping("/api/weather")
     public String[] getWeather() {
         try {
-            WeatherData weather = weatherService.getWeather("Toronto"); // Change to your city
+            WeatherData weather = weatherService.getWeather(); // No arguments
             return new String[]{
                 String.format("%.0f°C", weather.getMain().getTemp()),
                 weather.getWeather()[0].getMain()
